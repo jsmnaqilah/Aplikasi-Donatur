@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="df3076ea-05fb-4440-8225-9a622d9d5893">
+	<property name="ireport.zoom" value="1.4641000000000008"/>
+	<property name="ireport.x" value="23"/>
+	<property name="ireport.y" value="96"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     dana.`idDana` AS dana_idDana,
+     dana.`idPengelola` AS dana_idPengelola,
+     dana.`namaPengelola` AS dana_namaPengelola,
+     dana.`idDonatur` AS dana_idDonatur,
+     dana.`namaDonatur` AS dana_namaDonatur,
+     dana.`nominal` AS dana_nominal,
+     dana.`tgl` AS dana_tgl,
+     pengelola.`idPengelola` AS pengelola_idPengelola,
+     pengelola.`namaPengelola` AS pengelola_namaPengelola,
+     pengelola.`noHp` AS pengelola_noHp,
+     pengelola.`jk` AS pengelola_jk,
+     pengelola.`jabatan` AS pengelola_jabatan,
+     pengelola.`ttl` AS pengelola_ttl,
+     pengelola.`alamat` AS pengelola_alamat,
+     donatur.`idDonatur` AS donatur_idDonatur,
+     donatur.`namaDonatur` AS donatur_namaDonatur,
+     donatur.`noHp` AS donatur_noHp,
+     donatur.`jk` AS donatur_jk,
+     donatur.`ttl` AS donatur_ttl,
+     donatur.`alamat` AS donatur_alamat
+FROM
+     `pengelola` pengelola INNER JOIN `dana` dana ON pengelola.`idPengelola` = dana.`idPengelola`
+     AND pengelola.`idPengelola` = dana.`namaPengelola`
+     INNER JOIN `donatur` donatur ON dana.`idDonatur` = donatur.`idDonatur`]]>
+	</queryString>
+	<field name="dana_idDana" class="java.lang.String"/>
+	<field name="dana_idPengelola" class="java.lang.String"/>
+	<field name="dana_namaPengelola" class="java.lang.String"/>
+	<field name="dana_idDonatur" class="java.lang.String"/>
+	<field name="dana_namaDonatur" class="java.lang.String"/>
+	<field name="dana_nominal" class="java.lang.Integer"/>
+	<field name="dana_tgl" class="java.lang.String"/>
+	<field name="pengelola_idPengelola" class="java.lang.String"/>
+	<field name="pengelola_namaPengelola" class="java.lang.String"/>
+	<field name="pengelola_noHp" class="java.lang.String"/>
+	<field name="pengelola_jk" class="java.lang.String"/>
+	<field name="pengelola_jabatan" class="java.lang.String"/>
+	<field name="pengelola_ttl" class="java.lang.String"/>
+	<field name="pengelola_alamat" class="java.lang.String"/>
+	<field name="donatur_idDonatur" class="java.lang.String"/>
+	<field name="donatur_namaDonatur" class="java.lang.String"/>
+	<field name="donatur_noHp" class="java.lang.String"/>
+	<field name="donatur_jk" class="java.lang.String"/>
+	<field name="donatur_ttl" class="java.lang.String"/>
+	<field name="donatur_alamat" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="27" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="40" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="a518e39f-c6d9-4be1-8803-2a24962feb9e" x="0" y="0" width="79" height="20"/>
+				<textElement/>
+				<text><![CDATA[ID Dana]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c05061e9-2165-407b-9bd5-58219de1dab0" x="237" y="20" width="79" height="20"/>
+				<textElement/>
+				<text><![CDATA[ID Donatur]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="cf8cc2c1-0fc3-45db-8d82-5e3a2f0e57af" x="316" y="20" width="79" height="20"/>
+				<textElement/>
+				<text><![CDATA[Nama Pengelola]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5a96635d-b290-4128-aa40-f2373ca39b60" x="395" y="20" width="79" height="20"/>
+				<textElement/>
+				<text><![CDATA[Nama Donatur]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="69382544-e861-493a-a0a1-60b380b12908" x="474" y="20" width="79" height="20"/>
+				<textElement/>
+				<text><![CDATA[ID Pengelola]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="5d85413c-1872-4893-bdd6-da5024990a6e" x="79" y="0" width="79" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{dana_idDana}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement uuid="a2966636-ad02-4e09-b08f-f6fb7ed7b4a8" x="79" y="0" width="79" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{dana_nominal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6e48c572-4802-4893-84a8-86e4bf679077" x="237" y="0" width="79" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{dana_idDonatur}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="1a5174cc-67ad-4fa1-92ed-569368c8c21f" x="316" y="0" width="79" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{dana_namaPengelola}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="524e4ede-8b74-467a-9d9d-0ede7d799bb8" x="79" y="20" width="79" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{dana_tgl}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="e031e22b-70a0-4a43-b26c-b95637234acf" x="395" y="0" width="79" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{dana_namaDonatur}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="832c9283-33d2-4d03-a9ea-ef3bb607959f" x="474" y="0" width="79" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{dana_idPengelola}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="9d373c51-d970-4f62-a77c-495f39158909" x="0" y="0" width="79" height="20"/>
+				<textElement/>
+				<text><![CDATA[nominal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="08534156-57ea-4f51-b5c3-f7ab05ed099d" x="0" y="20" width="79" height="20"/>
+				<textElement/>
+				<text><![CDATA[tgl]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
